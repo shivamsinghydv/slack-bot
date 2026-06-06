@@ -11,7 +11,7 @@ const app = new App({
 
 
 // Personality Helpers
-const pick = (arr) => arr[Math.floor(Math.random() * arr.length())]
+const pick = (arr) => arr[Math.floor(Math.random() * arr.length)]
 
 const errorLines = [
   "Shite! Something broke. Probably not my fault.",
@@ -225,7 +225,7 @@ Here's what I can do _(don't push your luck)_:
 \'/slacky-ping\' - Check bot latency
 \'/slacky-catfact\' - Get a cat fact
 \'/slacky-dadjoke\' - Say a dad joke
-\'/slacky-qotd\' - Quote of the day
+\'/slacky-qotd\' - Two bits or rather bytes* of wisdom
 \'/slacky-trivia\' - get a trivia
 \'/slacky-8ball\' - Ask the universe something
 \'/slacky-roast\' - Light someone up (affectionately, offcourse)
