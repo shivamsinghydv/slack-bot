@@ -46,7 +46,7 @@ app.command("/slacky-ping", async ({ command, ack, respond }) => {
   await respond({ text: `Pong! 🏓\nLatency: *${latency}ms* — ${comment}` });
 });
 
-app.command("/slacky-catfact", async ({ ack, respond }) => {
+app.command("/slacky-catfact", async ({ ack, say }) => {
   await ack();
 
   const intros = [
@@ -61,14 +61,14 @@ app.command("/slacky-catfact", async ({ ack, respond }) => {
 
   try {
     const response = await axios.get("https://catfact.ninja/fact");
-    await respond({ text: `🐱:${pick(intros)}*\n${response.data.fact}` });
+    await say({ text: `🐱:${pick(intros)}*\n${response.data.fact}` });
 
   } catch (err) {
     await respond({ text: pick(errorLines)});
   }
 });
 
-app.command("/slacky-dadjoke", async ({ ack, respond }) => {
+app.command("/slacky-dadjoke", async ({ ack, say }) => {
   await ack();
 
   const setups = [
@@ -85,7 +85,7 @@ app.command("/slacky-dadjoke", async ({ ack, respond }) => {
   try {
     const response = await axios.get(
       "https://official-joke-api.appspot.com/random_joke");
-    await respond({
+    await say({
       text:
 `${pick(setups)}\n\n*${response.data.setup}*\n
 
@@ -96,7 +96,7 @@ app.command("/slacky-dadjoke", async ({ ack, respond }) => {
   }
 });
 
-app.command("/slacky-qotd", async ({ack, respond}) => {
+app.command("/slacky-qotd", async ({ack, say}) => {
   await ack();
 
   const intros = [
@@ -114,7 +114,7 @@ app.command("/slacky-qotd", async ({ack, respond}) => {
     const response = await axios.get("https://zenquotes.io/api/today");
     const { q: quote, a: author } = response.data[0];
 
-    await respond({
+    await say({
       text: `📜 *${pick(intros)}*\n\n_"${quote}"_\n\n ${author}`,
     })
   } catch (err) {
@@ -122,7 +122,7 @@ app.command("/slacky-qotd", async ({ack, respond}) => {
   }
 })
 
-app.command("/slacky-trivia", async ({ ack, respond}) => {
+app.command("/slacky-trivia", async ({ ack, say}) => {
   await ack();
 
   const decode = (str) =>
@@ -159,12 +159,12 @@ app.command("/slacky-trivia", async ({ ack, respond}) => {
         .join("\n")
     const correctLabel = labels[allAnswers.indexOf(correct)]
 
-    await respond({
+    await say({
       text: `🧠 *${pick(intros)}*\n*Category:* ${q.category}  |  *Difficulty:* ${q.difficulty}\n\n${question}\n\n${answerText}\n\n|| Answer: ${correctLabel}) ${correct}||`,
     });
 
   } catch (err) {
-    await respond({ text: pick(errorLines)
+    await say({ text: pick(errorLines)
 
       });
     }
@@ -200,7 +200,7 @@ app.command("/slacky-8ball", async ({ command, ack, respond }) => {
     text: `🎱 *"${question}"*\n${pick(answers)}`});
 });
 
-app.command("/slacky-roast", async ({ ack, respond, command }) => {
+app.command("/slacky-roast", async ({ ack, say, command }) => {
   await ack();
   const target = command.text.trim() || "you";
   const roasts = [
@@ -222,7 +222,7 @@ app.command("/slacky-roast", async ({ ack, respond, command }) => {
   ]
 
 
-  await respond({
+  await say({
     text:  `🔥 *${pick(roasts)}* \n\n_(all jokes, obviously)_}`
   })
 })
