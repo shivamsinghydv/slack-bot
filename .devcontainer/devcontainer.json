@@ -1,0 +1,10 @@
+{
+  "name": "Persisted Workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "wakatime.vscode-wakatime"
+      ]
+    }
+  }
+}
