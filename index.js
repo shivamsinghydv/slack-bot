@@ -93,7 +93,7 @@ app.command("/slacky-qotd", async ({ack, respond}) => {
   const intros = [
     "Someone wise one said: ",
     "Chew on this: ",
-    "Today's dost of wisdom: ",
+    "Today's dose of wisdom: ",
     "Words to live by (optional): ",
     "Here's something to put on a wall: "
   ]
@@ -103,7 +103,7 @@ app.command("/slacky-qotd", async ({ack, respond}) => {
     const { q: quote, a: author } = response.data[0];
 
     await respond({
-      text: '📜 *${pick(intros)}*\n\n_"${quote}"_\n\n ${author}',
+      text: `📜 *${pick(intros)}*\n\n_"${quote}"_\n\n ${author}`,
     })
   } catch (err) {
     await respond({ text: pick(errorLines) })
@@ -143,7 +143,7 @@ app.command("/slacky-trivia", async ({ ack, respond}) => {
     )
 
     const labels = ["A", "B", "C", "D"]
-    const answerText = allAnswers.map((a, i) => '${labels[i]}) ${a}')
+    const answerText = allAnswers.map((a, i) => `${labels[i]}) ${a}`)
         .join("\n")
     const correctLabel = labels[allAnswers.indexOf(correct)]
 
@@ -184,12 +184,12 @@ app.command("/slacky-8ball", async ({ command, ack, respond }) => {
   ]
 
   await respond({
-    text: '🎱 *"${question}"*\n${pick(answers)}' });
+    text: `🎱 *"${question}"*\n${pick(answers)}`});
 });
 
 app.command("/slacky-roast", async ({ ack, respond, command }) => {
   await ack();
-
+  const target = command.text.trim() || "you";
   const roasts = [
     `If ${target} were any more inbred, they would be a sandwich.`,
     `If I wanted to kill myself, I would climb up to ${target}'s ego and jump down to their IQ level.`,
@@ -210,7 +210,7 @@ app.command("/slacky-roast", async ({ ack, respond, command }) => {
 
 
   await respond({
-    text: '🔥 *${pick(roasts)}* \n\n_(all jokes, obviously)_}'
+    text:  `🔥 *${pick(roasts)}* \n\n_(all jokes, obviously)_}`
   })
 })
 
