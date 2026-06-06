@@ -18,7 +18,11 @@ const errorLines = [
   "The internet let me down again. Shocking!",
   "Error detected: Blame the server not me.",
   "I tried, but the server had other plans",
-  "Something went wrong, I am just as disappointed as you are ;("
+  "Something went wrong, I am just as disappointed as you are ;(",
+  "Well, this is embarrassing. The server is acting up again.",
+  "I would have gotten you that info, but the server said no.",
+  "The server is being a jerk. I can't get you that info right now.",
+  "I swear I had it, but the server is adversary today.",
 ]
 
 
@@ -50,7 +54,9 @@ app.command("/slacky-catfact", async ({ ack, respond }) => {
     "Unsolicited cat knowledge incoming...",
     "Not like you asked, but here we go \n",
     "If you don't believe me, you can ask the cats \n",
-    "For the cat enthusiasts in the room"
+    "For the cat enthusiasts in the room",
+    "Here's a cat fact for you \n",
+    "Here's something to brag about at your next Zoom meeting \n"
   ]
 
   try {
@@ -68,6 +74,9 @@ app.command("/slacky-dadjoke", async ({ ack, respond }) => {
   const setups = [
     "Brace yourself.",
     "Drum rolls please 🥁",
+    "Here's one for you",
+    "Get ready to groan",
+    "Hold your hats, this is a good one",
     "This one's really something",
     "Stop me if you've heard this before. Actually, don't Im going to say it anyway",
     "Alright, everybody quiet down. I've got a good one."
@@ -95,7 +104,10 @@ app.command("/slacky-qotd", async ({ack, respond}) => {
     "Chew on this: ",
     "Today's dose of wisdom: ",
     "Words to live by (optional): ",
-    "Here's something to put on a wall: "
+    "Here's something to put on a wall: ",
+    "Thought for the day: ",
+    "Here's a byte of wisdom for you to chew on:",
+    "Here's a quote to make you sound smart at parties: "
   ]
 
   try {
@@ -176,6 +188,7 @@ app.command("/slacky-8ball", async ({ command, ack, respond }) => {
     "Ask again after coffee.",
     "The signs point to yes, but I wouldn't bet on it.",
     "Outlook not great. Sorry 😔",
+    "You may try if you fancy, but I would recommend against it.",
     "Obviously",
     "I have no clue and frankly, neither do you.",
     "Very doubtful. But what do I know.",

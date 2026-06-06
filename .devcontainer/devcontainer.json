@@ -3,7 +3,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "wakatime.vscode-wakatime"
+        "WakaTime.vscode-wakatime"
       ]
     }
   }
