@@ -2,7 +2,7 @@
 
 An automated Slack assistant built to listen to workspace events, handle custom slash commands, and streamline team workflows directly within your channels.
 
-![Slack Bot Demo](https://raw.githubusercontent.com/shivamsinghydv/slack-bot/main/preview.webp)
+![Slack Bot Demo](https://raw.githubusercontent.com/shivamsinghydv/slack-bot/main/preview.png)
 
 ---
 
